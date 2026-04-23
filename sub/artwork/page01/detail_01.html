@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400">
+    <title>FOA 포아</title>
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="./detail_01.css">
+</head>
+
+<body>
+    <header>
+        <a href="#">
+            <img src="./images/logo.png" alt="로고" class="logo">
+        </a>
+    </header>
+
+    <!-- 상품 주문창 -->
+    <div id="product">
+        <div class="img">
+            <img src="./images/1.jpg" alt="product">
+        </div>
+        <div class="right">
+            <div class="border">
+                <h1>포아(FOA) 대용량 캔디 캔들 1000g</h1>
+                <h2>48,000원</h2>
+                <h3>Forest Walk 101</h3>
+                <dl>
+                    <dt>Note</dt>
+                    <dd>- Pine needle</dd>
+                    <dd>- Cypress</dd>
+                    <dd>- Moss</dd>
+                </dl>
+                <h3>Sweet Aroma 202</h3>
+                <dl>
+                    <dt>Note</dt>
+                    <dd>- Lavender</dd>
+                    <dd>- Vanilla</dd>
+                    <dd>- Sandalwood</dd>
+                </dl>
+
+                <p>100% 천연 소이 왁스와 프리미엄 향료만을 사용하여 그을음 없이 깨끗하고 은은한 향을 선사합니다. <br>
+                    일상 속 지친 마음을 달래주는 숲의 평온함을 느껴보세요.
+                </p>
+            </div>
+            <table class="selectbox">
+                <tr>
+                    <th>제품선택</th>
+                    <td>
+                        <select name="option">
+                            <option value="*">옵션을 선택해 주세요.</option>
+                            <option value="103">Forest Walk 101</option>
+                            <option value="305">Sweet Aroma 202</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>수량</th>
+                    <td>
+                        <select name="number">
+                            <option value="*">옵션을 선택해 주세요.</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <ul class="order">
+                <li><a href="#">장바구니</a></li>
+                <li><a href="#">구매하기</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 상세페이지 -->
+    <div class="main">
+        <img src="./images/강수민_상세페이지.jpg" alt="page1">
+    </div>
+
+    <!-- 제품 정보 -->
+    <div class="info">
+        <h1>제품 세부 정보</h1>
+
+        <h2>진성분</h2>
+        <p>천연 소이 왁스, 프리미엄 향료(Pine needle, Cypress, Lavender 등), 면 심지</p>
+
+        <h2>제품 정보</h2>
+        <p>제품명 : 포아(FOA) 대용량 캔디 캔들</p>
+        <p>용량 : 1000g / 35.2oz.</p>
+        <p>제품 주요 사양 : 연소형 방향제</p>
+        <p>제조국 : 대한민국</p>
+        <p>제품유지기간 : 개봉일로부터 24개월</p>
+        <p>제조번호 및 사용기한 : 최소 2025년 10월 18일 이후까지인 상품만을 취급</p>
+
+        <h2>사용 방법</h2>
+        <p>심지를 5mm 정도로 유지하여 그을음을 방지해 주세요.</p>
+        <p>* 첫 사용 시 가장자리까지 녹을 때까지 2시간 이상 연소해 주세요.</p>
+        <p>* 사용 후 환기를 권장하며 취침 시에는 반드시 불을 꺼주세요.</p>
+
+        <h2>사용할 때의 주의사항</h2>
+        <ol>
+            <li>용도 외에는 사용하지 마시고 어린이의 손이 닿지 않는 곳에 보관할 것</li>
+            <li>직사광선이나 열기에 노출시키지 말 것</li>
+            <li>밀폐된 공간에서 사용 시 충분히 환기를 할 것</li>
+            <li>보관 및 취급 시 주의사항
+                <ol class="ol_in">
+                    <li>인화성 물질 근처에서 사용 금지</li>
+                    <li>파손 시 유리 파편에 주의할 것</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+        <img src="./images/fu.png" alt="로고">
+    </div>
+
+    <div class="fixed-buttons">
+    <button onclick="scrollToTop()" class="btn top-btn">TOP</button>
+</div>
+
+
+<script>function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' /* 부드럽게 올라가는 효과 */
+    });
+}</script>
+
+</body>
+
+</html>
