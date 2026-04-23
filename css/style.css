@@ -1,0 +1,1051 @@
+/* 기본 스타일 수정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;     /* 가로 스크롤 강제 차단 */
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+body { font-family: 'Pretendard', sans-serif; line-height: 1.6; color: #333; background-color: #F7F8F2;
+    width: 100%;
+    overflow-x: hidden; /* 가로로 튀어나온 모든 것을 숨김 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+li { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+/* 네비게이션 */
+header {
+    /* sticky 대신 fixed를 사용하면 부모 요소의 영향 없이 무조건 상단 고정됩니다 */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #DDE5D1;
+    border-bottom: 1px solid #ddd;
+    z-index: 9999; /* 다른 콘텐츠보다 무조건 위에 오도록 높게 설정 */
+}
+nav ul {
+    display: flex; justify-content: center; padding: 1rem;
+}
+nav ul li { margin: 0 20px; font-weight: bold; }
+
+nav ul li a:hover { margin: 10px; font-weight: bold;  color: #3A7D44;}
+
+@media (max-width: 1100px) {
+    nav ul {
+        width: 100%;
+        max-width: 100%; /* 절대 넘지 않게 고정 */
+        margin: 0;
+        padding: 1rem 0; /* 좌우 패딩을 0으로 줄여보세요 */
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    /* 헤더 전체 너비 고정 */
+    header {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column; /* 세로로 쌓기 */
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a:hover { margin: 10px; font-weight: bold;  color: #3A7D44;} 
+    
+    nav ul li a {
+        display: block;
+        font-size: 14px; /* 글자 크기를 조금 줄여서 가독성 확보 */
+        padding: 8px 0;
+        /* 긴 메뉴(ARTWORK & SNS DESIGN) 줄바꿈 허용 */
+        white-space: normal; 
+        line-height: 1.2;
+    }
+}
+
+
+
+/* PC 버전 기본값 (기존 코드에 추가) */
+.header-inner {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hamburger {
+    display: none; /* PC와 태블릿에서는 일단 숨김 */
+}
+
+nav ul {
+    display: flex; /* PC/태블릿에서는 가로로 메뉴 보임 */
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+@media (max-width: 600px) {
+    /* 1. 헤더 전체 설정 */
+    header {
+        position: fixed; /* 상단 고정 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px; /* 높이를 명시적으로 지정 */
+        background: #DDE5D1 !important; /* 배경색 강제 적용 */
+        z-index: 9999;
+        display: block; /* 안 보일 경우를 대비해 block 설정 */
+    }
+
+    /* 2. 로고와 햄버거 버튼을 양 끝으로 배치 */
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+    }
+
+    /* 3. 모바일에서 기존 메뉴 숨기기 (햄버거 버튼 클릭 전까지) */
+    nav {
+        position: absolute;
+        top: 60px; /* 헤더 바로 아래부터 시작 */
+        left: 0;
+        width: 100%;
+        background: #DDE5D1;
+        max-height: 0; /* 평소엔 높이 0으로 숨김 */
+        overflow: hidden;
+        transition: max-height 0.3s ease; /* 스르륵 효과 */
+    }
+
+    /* 제이쿼리로 active 클래스가 붙었을 때만 메뉴 보임 */
+    nav.active {
+        max-height: 100vh; /* 메뉴가 열릴 때 높이 확보 */
+        border-bottom: 1px solid #ccc;
+    }
+
+    nav ul {
+        flex-direction: column; /* 세로 정렬 */
+        padding: 20px 0;
+    }
+
+    /* 4. 햄버거 버튼 보이게 설정 */
+    .hamburger {
+        display: flex !important; /* 모바일에서 강제로 보이게 함 */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 25px;
+        height: 18px;
+    }
+}
+
+
+
+/* 공통 섹션 스타일 */
+.section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+h2 { font-size: 2rem; margin-bottom: 40px; border-bottom: 2px solid #333; display: inline-block; }
+
+
+
+/* 기본 PC 설정 (기존 코드 유지) */
+.main-visual {
+    position: relative;
+    height: 890px; /* PC 기본 높이 */
+    display: flex;
+    margin: 60px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    /* 이 아래 줄을 추가하세요! */
+    pointer-events: none; 
+}
+
+.bg-video {
+    z-index: 0;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+    .main-visual {
+        height: 880px; /* PC 기본 높이 */
+        aspect-ratio: 16 / 9; /* 16:9 비율 유지 (또는 4:3 등 원하는 비율로 설정) */
+        width: 100%;
+    }
+}
+
+/* 모바일 구간 (600px 이하) */
+@media screen and (max-width: 600px) {
+    .main-visual {
+        height: 80vh; /* 모바일은 화면을 가득 채우거나(100vh) 더 작게 설정 */
+        width: 100%;
+    }
+    /* @media screen and (max-width: 600px) 내부 */
+
+.main-visual video { /* 또는 img */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 1번: 영역을 가득 채우되 비율 유지 (약간 잘릴 수 있음) */
+    /* object-fit: contain;  2번: 잘리는 부분 없이 전체 다 보여주기 (여백 발생 가능) */
+}
+    
+    .main-visual h1 {
+        font-size: 1.8rem;
+    }
+    .main-visual p {
+        font-size: 1rem;
+        word-break: keep-all; /* 모바일에서 문장이 예쁘게 끊기도록 설정 */
+    }
+}
+
+/* 영상 스타일 (반응형 공통) */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+
+/* 포트폴리오 그리드 */
+.project { margin-bottom: 100px; }
+.project-grid, .artwork-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; margin-top: 20px;
+}
+.item {
+    border: 1px solid #ccc; padding: 40px 10px; background: #fff;
+    transition: 0.3s; cursor: pointer;
+}
+.item:hover { background: #eee; }
+
+
+
+
+#about{
+    margin: 250px auto;
+    padding: 70px;
+}
+.about-container {
+    display: flex;
+    flex-direction: column; /* 전체적으로는 위아래로 쌓음 */
+    align-items: center;
+    gap: 30px;
+    padding: 80px auto;
+}
+
+.profile-img {
+    width: 200px; /* 원하는 이미지 너비를 px로 입력하세요 */
+    height: auto; /* 이미지 원본 비율을 유지하기 위해 꼭 써주세요 */
+}
+
+/* 추가로, 이 div 안에 있는 실제 이미지가 div 크기를 넘지 않게 설정합니다 */
+.profile-img img {
+    width: 100%;
+}
+/* 이미지를 감싸는 div의 배경색을 투명하게 설정 */
+.profile-img {
+    background-color: transparent !important;
+}
+
+/* 추가로, 이 div 안에 있는 실제 이미지의 배경색도 투명하게 설정 */
+.profile-img img {
+    background-color: transparent !important;
+}
+
+
+/* ★핵심: 사진과 소개글만 가로로 정렬 */
+.intro-wrapper {
+    display: flex;
+    align-items: center;  /* 사진과 글자 높이 맞춤 */
+    justify-content: center;
+    gap: 40px;            /* 사진과 글 사이 간격 */
+
+}
+
+.about-text {
+    flex: 1;              /* 글자가 차지하는 영역 */
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+  #about {
+    padding: 40px 20px; /* 여백 줄이기 */
+    margin: 100px auto; /* 상하 간격 조정 */
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .profile-img {
+    width: 250px !important; /* 300px은 너무 클 수 있어 조금 줄임 */
+    height: 250px !important; 
+    margin-bottom: 30px;
+  }
+
+  .about-text {
+    width: 100%;
+    text-align: center;
+    font-size: 14px; /* 글자 크기 살짝 조정 */
+    word-break: keep-all;
+  }
+
+  /* 키워드 부분: 5열에서 3열 정도로 변경 (글자 잘림 방지) */
+  .keywords {
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 10px 5px !important;
+    margin-top: 30px;
+  }
+
+  .tag, .keyword {
+    font-size: 13px !important; /* 모바일용 폰트 크기 */
+  }
+}
+
+.keywords {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5열 유지 */
+    width: 100%;
+    gap: 15px 10px;
+    margin-top: 20px;     /* 소개글과의 위 간격 */
+}
+
+/* 아래 코드들은 기존대로 유지하거나 크기를 살짝 조절하세요 */
+.profile-img {
+    flex: 0 0 auto;       /* 세로 배치 시 크기를 고정할 필요가 없어요 */
+    width: 300px;         /* 사진 영역 너비 */
+    height: 300px;        /* 높이 설정 */
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.keywords{
+    margin: 60px auto;
+}
+.tag {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    /* 그리드 안에서 중앙에 오도록 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap; /* 글자가 길어도 줄바꿈 되지 않게 고정 */
+}
+
+/* 강조 태그 스타일 */
+.tag.highlight {
+    background-color: #3A7D44;
+    color: #DDE5D1;
+    border-radius: 15px;
+    padding: 5px 12px;
+    /* 강조 태그가 너무 커져서 그리드를 밀어내지 않게 조절 */
+    width: fit-content;
+    margin: 0 auto;
+}
+.keyword {
+    
+    font-weight: 700;
+    font-size: 15px; /* 기존 크기 */
+    color: #333;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap; /* 글자가 길어도 줄바꿈 되지 않게 고정 */
+    line-height: 1.6; /* ✨ 추가: 두 줄 사이의 간격을 적절하게 벌려줍니다 */
+    margin-top: 10px; /* ✨ 추가: 위쪽 요소와의 간격 조절 */
+}
+
+
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap; /* 자식이 넘치면 다음 줄로 넘김 */
+    gap: 20px;       /* 박스 사이 간격 */
+    justify-content: center;
+}
+
+.project-grid .item {
+    /* 기존 설정 유지 */
+    width: calc(50% - 10px);
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 0; /* 내부 여백 제거 (이미지를 꽉 채우기 위해) */
+    overflow: hidden; /* 이미지가 넘치면 자르기 */
+}
+
+
+
+
+/* 부모 컨테이너 */
+.project-grid .item {
+    position: relative; /* 자식인 .overlay의 기준점이 됨 */
+    width: calc(50% - 10px);
+    height: 300px;
+    overflow: hidden;
+}
+
+/* 이미지 설정 */
+.project-grid .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 어두운 투명 배경 (Overlay) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 13, 1, 0.5); /* 검은색 60% 투명도 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* 처음에는 안 보이게 설정 */
+    opacity: 0;
+    transition: opacity 0.4s ease; /* 스르륵 나타나는 효과 */
+}
+
+/* 텍스트 스타일 */
+.overlay .text {
+    color: #f4ede6;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 호버 시 효과: 부모(.item)에 마우스를 올리면 .overlay가 나타남 */
+.item:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-banner{
+    margin: 300px auto;
+}
+.portfolio-banner a {
+    position: relative; /* 이미지 겹치기의 기준점 */
+    display: block;
+    width: 100%;
+    /* 만약 가운데 정렬이 필요하다면 아래 추가 */
+}
+
+.portfolio-banner img {
+    width: 100%;    /* 이미지 크기 조절 */
+    display: block;
+    transition: opacity 0.4s ease; /* 부드럽게 바뀌는 효과 */
+    transform: scale(1.5); /* 1.1배로 키움 (1.2는 1.2배) */
+}
+
+/* 호버 이미지를 기본 이미지 위에 딱 겹치기 */
+.portfolio-banner .img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* 처음에는 투명하게 */
+}
+
+/* 마우스를 올렸을 때 (Hover) */
+.portfolio-banner:hover .img-hover {
+    opacity: 1; /* 호버 이미지는 보이고 */
+}
+
+.portfolio-banner:hover .img-basic {
+    opacity: 0; /* 기본 이미지는 숨기기 */
+}
+
+/* 타임라인 전체 설정 */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px 0;
+}
+
+/* 중앙 수직선 */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #A3D977; /* 연한 레드 선 */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    /* 핵심 수정 부분: 선을 맨 뒤로 보냅니다. */
+    z-index: -1;
+}
+
+/* 타임라인 개별 아이템 박스 */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%; /* 반 너비 사용 */
+    box-sizing: border-box;
+}
+
+/* 중앙 원형 포인트 */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -8px;
+    background-color: #F7F8F2;
+    border: 2px solid #3A7D44;
+    border-radius: 50%;
+    top: 25px;
+    z-index: 1;
+}
+
+/* 왼쪽 배치 */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+/* 오른쪽 배치 */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* 오른쪽 아이템의 원형 포인트 위치 수정 */
+.timeline-item:nth-child(even)::after {
+    left: -8px;
+}
+
+/* 콘텐츠 스타일 (흰색 박스) */
+.timeline-content {
+    padding: 20px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 날짜 라벨 (빨간색 둥근 박스) */
+.date {
+    display: inline-block;
+    background: #3A7D44;
+    color: #DDE5D1;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* 1. 이미지(학교, 수료증) 아이콘 크기 조절 */
+.timeline-item img {
+    width: 150px;  /* 이미지 크기를 적당하게 조절 */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; /* 중앙 정렬 및 아래 간격 */
+    position: relative;
+    z-index: 2; /* 선보다 위로 올리기 */
+    
+    padding: 10px; /* 아이콘 주변에 여유 공간을 줘서 선이 안 보이게 함 */
+}
+
+/* 2. 아이콘이 있는 첫 번째와 마지막 아이템의 레이아웃 수정 */
+/* 아이콘만 있는 경우 중앙 정렬을 위해 너비를 100%로 설정 */
+.timeline-item:first-child,
+.timeline-item:last-child {
+    width: 100%;
+    left: 0 !important;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* 3. 아이콘 뒤에 중앙 원형 포인트 안 나오게 하기 */
+.timeline-item:first-child::after,
+.timeline-item:last-child::after {
+    display: none;
+}
+@media (max-width: 600px) {
+  /* 1. 중앙 수직선을 왼쪽으로 이동 */
+  .timeline::after {
+    left: 31px; /* 원형 포인트 위치에 맞춰 선을 왼쪽으로 이동 */
+  }
+
+  /* 2. 각 아이템 박스를 전체 너비로 변경 */
+  .timeline-item {
+    width: 100% !important;
+    padding-left: 70px !important; /* 선과 텍스트 사이 간격 확보 */
+    padding-right: 25px !important;
+    text-align: left !important; /* 왼쪽 정렬로 통일 */
+    left: 0 !important;
+  }
+
+  /* 3. 오른쪽 배치였던 아이템들도 왼쪽으로 정렬 */
+  .timeline-item:nth-child(even) {
+    left: 0 !important;
+  }
+
+  /* 4. 원형 포인트(::after) 위치를 왼쪽 선 위로 고정 */
+  .timeline-item::after {
+    left: 21px !important; /* .timeline::after 선 위치와 맞춤 */
+    right: auto !important;
+  }
+
+  .timeline-item:nth-child(even)::after {
+    left: 21px !important;
+  }
+
+  /* 5. 첫 번째/마지막 아이콘 이미지 정렬 */
+  .timeline-item:first-child,
+  .timeline-item:last-child {
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+  
+  .timeline-item img {
+    margin: 0 auto 20px !important;
+    width: 100px; /* 모바일에선 이미지 크기를 조금 줄이는 게 좋아 */
+  }
+}
+
+
+/* --- 애니메이션 기본 상태 --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 이 부분을 찾아서 수정하세요 */
+.artwork-grid {
+    display: grid;
+    /* 기존 1fr 1fr (2칸)에서 1fr 1fr 1fr (3칸)으로 변경 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; /* 아이템 사이 간격 */
+    margin-top: 50px;
+}
+
+/* Update your CSS with these rules */
+
+.artwork-grid a.item {
+    display: flex; /* 이미 추가됨 */
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+    padding: 0; /* ✨ 추가: 내부 여백을 0으로 만들어 이미지를 밀착시킴 */
+    border: none; /* ✨ 추가: 혹시 모를 테두리 제거 */
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f7;
+}
+
+.artwork-grid a.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ✨ 이 속성이 유지되어야 꽉 찹니다 */
+    display: block; /* ✨ 추가: 이미지 하단에 미세하게 생기는 빈 공간 제거 */
+}
+
+
+.artwork-grid a.item {
+    position: relative; /* 필수: 이게 없으면 오버레이가 화면 밖으로 나가요 */
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.artwork-grid .overlay {
+    position: absolute;
+    top: 0; /* bottom 대신 top으로 고정해볼게요 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 평소엔 투명하게 */
+    transition: opacity 0.3s ease; /* 나타나는 속도 */
+    z-index: 10; /* 이미지보다 위에 오도록 */
+    pointer-events: none; /* 마우스 이벤트를 방해하지 않게 함 */
+}
+
+/* 마우스 올렸을 때 나타나게 하는 핵심 코드! */
+.artwork-grid a.item:hover .overlay {
+    opacity: 0.9;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+/* 태블릿 (1100px 이하) */
+@media (max-width: 1100px) {
+    .artwork-grid {
+        display: grid;
+        /* 2열로 배치 */
+        grid-template-columns: repeat(2, 1fr); 
+        /* [추가] 그리드 자체를 중앙으로, 아이템들도 중앙 정렬 */
+        justify-content: center; 
+        justify-items: center;   
+        gap: 20px;
+        width: 100%;
+        max-width: 800px; /* 아이템 2개가 들어갈 적당한 너비로 제한 */
+        margin: 0 auto;   /* 부모 컨테이너 내에서 중앙 배치 */
+        padding: 0 20px;
+    }
+}
+
+/* 모바일 (600px 이하) */
+@media (max-width: 600px) {
+    .artwork-grid {
+        /* 1열로 변경 */
+        grid-template-columns: 1fr;
+        /* [추가] 아이템 중앙 정렬 */
+        justify-items: center; 
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .artwork-grid .item {
+        width: 100%;
+        max-width: 400px; /* 카드가 너무 뚱뚱해지지 않게 제한 */
+    }
+}
+
+
+/* 기존 .item 스타일 수정/추가 */
+.artwork-grid .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* a태그 밑줄 제거 */
+    color: #333;
+    font-weight: bold;
+    width: 300px;
+    height: 300px; /* 박스 높이 고정 (취향껏 조절) */
+    border: 1px solid #ccc;
+    background: #fff;
+    transition: all 0.3s ease; /* 부드러운 효과 */
+    cursor: pointer;
+}
+
+
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* 배경 바 - 전체적으로 둥글게 */
+.skill-bar {
+    width: 100%;
+    height: 16px; /* 높이를 조금 더 키우면 둥근 느낌이 더 잘 살아요 */
+    background-color: #eee;
+    border-radius: 50px; /* 아주 큰 값을 주면 양끝이 반원이 됩니다 */
+    overflow: hidden; 
+    margin-top: 10px;
+}
+
+/* 1. 기본 상태: 애니메이션을 아예 적지 않습니다 */
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3A7D44, #DDE5D1);
+    border-radius: 50px;
+    width: 0; /* 시작은 항상 0 */
+    transition: none; /* 혹시 모를 간섭 방지 */
+}
+
+/* 2. 자바스크립트가 'animated' 클래스를 붙였을 때만 애니메이션 실행 */
+.bar-fill.animated {
+    animation: fillUp 2s ease-out forwards;
+}
+
+@keyframes fillUp {
+    from { width: 0; }
+    to { width: var(--target-width); }
+}
+
+/* 스크롤 감지 후 추가될 클래스 */
+.bar-fill.animated {
+    animation-play-state: running; /* 화면에 보이면 재생 */
+}
+
+
+/* (선택) 마우스를 올렸을 때 반짝이는 효과 */
+.skill-item:hover .bar-fill {
+    filter: brightness(1.2);
+}
+
+
+
+/* 인터뷰 컨테이너 */
+.interview-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* 텍스트는 왼쪽 정렬 */
+}
+
+/* 개별 인터뷰 아이템 박스 */
+.interview-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+/* 마우스를 올렸을 때 강조 효과 (이미지의 붉은 포인트 반영) */
+.interview-item:hover {
+    border-color: #DDE5D1; /* 수민님의 포인트 컬러 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: translateX(10px); /* 오른쪽으로 살짝 이동하는 느낌 */
+}
+
+/* 질문 영역 */
+.q-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.q-mark {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #A3D977; /* Q는 강조 색상 */
+    margin-right: 15px;
+}
+
+.question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+}
+
+/* 답변 영역 */
+.a-box {
+    padding-left: 40px; /* Q 표시만큼 들여쓰기 */
+    border-left: 2px solid #f4f4f4; /* 답변 옆에 얇은 선으로 구분 */
+}
+
+.answer {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+
+/* 전체 컨테이너를 중앙으로 */
+.contact-container {
+    width: 100%; /* 부모 너비 전체 사용 */
+    display: flex;
+    height: 300px;
+    padding-bottom: 90px;
+    margin: 0 auto;
+    flex-direction: column; /* 세로로 쌓기 (타이틀 아래 아이템들) */
+    align-items: center;    /* 가로축 기준 중앙 정렬 */
+    justify-content: center; /* 세로축 기준 중앙 정렬 (필요 시) */
+    text-align: center;
+}
+
+/* 아이템들이 담긴 박스를 중앙으로 */
+.contact-wrapper {
+    display: flex;
+    justify-content: center; /* 아이템들을 가로 중앙에 모음 */
+    gap: 100px;             /* 아이템 사이의 간격 */
+    width: 100%;
+}
+
+/* 타이틀 정렬 */
+.title {
+    text-align: center;      /* 글자를 가운데로 */
+    width: 100%;
+    margin-bottom: 60px;
+    font-size: 2rem; margin-bottom: 40px; border-bottom: 2px solid #333; display: inline-block;
+    width: 200px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+        /* 원형 아이콘 베이스 */
+.icon-circle {
+     width: 80px;
+    height: 80px;
+    background-color: #3A7D44;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ }
+
+/* 아이콘 내부 흰색 모양 (SVG 사용) */
+.icon-circle svg {
+    width: 40px;
+    height: 40px;
+    fill: #F7F8F2;
+}
+
+/* 텍스트 스타일 */
+.text-box h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.text-box p {
+   margin: 5px 0 0 0;
+   font-size: 16px;
+   color: #333;
+   font-weight: 500;
+}
+@media (max-width: 600px) {
+  /* 1. 컨테이너 높이 제한 해제 및 여백 조정 */
+  .contact-container {
+    height: auto !important; /* 고정 높이 300px 해제 */
+    padding: 60px 20px !important;
+  }
+
+  /* 2. 가로 배치를 세로 배치로 변경 */
+  .contact-wrapper {
+    flex-direction: column !important;
+    gap: 40px !important; /* 아이템 사이 간격을 세로에 맞춰 줄임 */
+    align-items: center !important;
+  }
+
+  /* 3. 개별 아이템 내부 정렬을 세로로 변경 (아이콘 위, 텍스트 아래) */
+  .contact-item {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center !important;
+  }
+
+  /* 4. 텍스트 박스 안의 글자 크기 미세 조정 */
+  .text-box h3 {
+    font-size: 20px !important;
+  }
+
+  .text-box p {
+    font-size: 15px !important;
+    word-break: break-all; /* 이메일이 길어질 경우 대비 */
+  }
+}
+
+        
+
+footer { background: #333; color: #fff; padding: 40px 20px; text-align: center; }
+
+
+
+.fixed-buttons {
+    position: fixed;
+    right: 30px;  /* 오른쪽에서 30px 띄움 */
+    bottom: 30px; /* 아래에서 30px 띄움 */
+    display: flex;
+    flex-direction: column; /* 버튼을 세로로 나열 */
+    gap: 10px;    /* 버튼 사이 간격 */
+    z-index: 999; /* 다른 요소보다 위에 보이게 설정 */
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* 동그란 모양 */
+    border: none;
+    background-color: #333; /* 기본 배경색 */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* 마우스를 올렸을 때 효과 */
+.btn:hover {
+    background-color: #7db971; /* 수민님의 포인트 컬러(레드)로 변경해보세요! */
+    transform: translateY(-5px); /* 살짝 위로 올라가는 효과 */
+}
