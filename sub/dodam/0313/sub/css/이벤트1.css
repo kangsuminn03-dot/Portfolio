@@ -1,0 +1,316 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+@font-face {
+    font-family: 'YeogiOttaeJalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'YeogiOttaeJalnan';
+    line-height: 22px;
+    color: #3f2a1d;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+#wrap_wrap{
+    min-width: 1400px;
+    overflow: hidden;
+}
+/* header ============================= */
+
+#header_wrap {
+    background-color: #f4ede6;
+    height: 80px;
+    border-bottom: 3px solid #3f2a1d;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 화면 전체 너비 사용 */
+}
+
+.header {
+    width: 1320px;
+    /* 실제 콘텐츠가 들어갈 너비 */
+    height: 100%;
+    /* 부모 높이(130px)를 그대로 사용 */
+    margin: 0 auto;
+    /* 화면 중앙 정렬 */
+    display: flex;
+    /* 로고와 gnb를 가로로 배치 */
+    justify-content: space-between;
+    /* 양 끝으로 배치 */
+    align-items: center;
+    /* 로고와 메뉴를 세로 중앙 정렬 */
+
+}
+.Login{
+       position: absolute;
+    top: 0px;
+    right: 90px;
+    list-style: none;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+
+    width: 50px; 
+    height: 50px;
+    text-align: center;
+    line-height: 50px; /* 글자 세로 중앙 정렬 */
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+}
+.Login:hover{
+   /* 글자만 투명하게 숨기기 */
+    color: transparent; 
+    
+    /* 배경 이미지 출력 */
+    background-image: url(../img/1-2.1.png);
+}
+.logo {
+    padding-top: 18px;
+    margin-bottom: 15px;
+    padding-right: 30px;
+}
+
+.logo img {
+    width: 62%;
+}
+
+.gnb {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.gnb>li>a {
+    display: block;
+    color: #3f2a1d;
+    font-size: 20px;
+    padding: 58px 48px 24px 25px;
+    font-weight: bold;
+}
+.gnb>li>a:hover{
+    color: #6c3f2a
+}
+/* header--------------------------------e */
+/* box1---------------------------------------s */
+.box1{
+    margin-top: 80px;
+    background: url(../img/1-117.jpg);
+    height: 600px;
+}
+.box1 h5{
+   text-align: center;
+   color: #f4ede6;
+   font-family: 'Pretendard';
+   font-weight: 200;
+   padding: 230px 0 30px 0;
+   margin-right: 30px;
+   text-shadow: 2px 2px 5px rgba(0, 8, 0, 10.5);
+}
+.box1 p{
+    text-align: center;
+    color: #f4ede6;
+    font-family: 'Pretendard';
+    margin-right: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 8, 0, 10.5);
+}
+/* box1---------------------------------------e */
+/* box2---------------------------------------s */
+.box2{
+    background: url(../img/1-118.jpg) no-repeat center;
+    width: 650px;
+    height: 1600px;
+    margin: 90px auto;
+}
+/* box2---------------------------------------e */
+/* box3---------------------------------------s */
+.box3{
+    padding: 50px;
+}
+.box3 ul li{
+    font-family: 'Pretendard';
+    text-align: center;
+}
+.box3 li>a{
+    padding: 20px 0;
+}
+.weap1{
+   border-top:1px solid #3f2a1d ;
+   width: 50%;                 /* 선의 길이를 50%로 제한 */
+  margin: 0 auto;             /* 위아래 마진 0, 좌우는 자동으로 맞춰서 가운데 정렬 */
+  border-bottom: 1px solid #3f2a1d;
+  text-align: center;
+  padding: 6px;
+}
+.weap2{
+   width: 50%;                 /* 선의 길이를 50%로 제한 */
+  margin: 0px auto;             /* 위아래 마진 0, 좌우는 자동으로 맞춰서 가운데 정렬 */
+  border-bottom: 1px solid #3f2a1d;
+  text-align: center;
+  padding: 6px;
+  margin-bottom: 60px;
+}
+.weap1:hover{
+    background-color: #f4ede6;
+}
+.weap2:hover{
+    background-color: #f4ede6;
+}
+/* section13------------------------------------------------------s */
+#section13{
+    height: 844px;
+    margin-bottom: -20px;
+    text-align: center;
+}
+/* footer -------------------------------------------s*/
+.footer{
+    background: url(../img/1-100.png) no-repeat center;
+    height: 844px;
+    width: 100%;
+    margin: 100px 0 0 0 auto;
+}
+.footer img{
+  width: 100%;
+  text-align: center;
+}
+.footer_box{
+    width: 1320px;
+    margin: 0 auto;
+    margin-left: 150px;
+    padding-top: 250px;
+}
+/* Social ----------------------------------------------s*/
+.Social h5{
+    font-size: 28px;
+    margin-left: 95px;
+     margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* 1. 소셜 리스트의 링크 설정 */
+.Social ul li a {
+    display: flex;         /* 아이콘과 글자를 가로로 나란히 */
+    align-items: center;   /* 세로 방향 중앙 정렬 (이게 핵심!) */
+    gap: 10px;            /* 아이콘과 글자 사이의 간격 */
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 8px;    /* 줄 간격 */
+    margin-left: 90px;     /* 제목과 줄 맞추기 위해 추가 */
+}
+.Social img{
+    width: 2%;
+}
+.Social span{
+    font-size: 15px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+}
+/* Company -----------------------------------------------s*/
+.Company h5{
+    font-size: 28px;
+    margin-left: 90px;
+     margin-top: 20px;
+    margin-bottom: 10px;
+}
+.Company p{
+    font-size: 15px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    margin-left: 90px;
+}
+/*Customer-------------------------------------------------s  */
+.Customer h5{
+    font-size: 25px;
+    margin-left: 90px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.Customer p{
+    font-size: 15px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    margin-left: 90px;
+}
+/* section13------------------------------------------------------e */

@@ -1,0 +1,1324 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'YeogiOttaeJalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'YeogiOttaeJalnan';
+    line-height: 22px;
+    color: #3f2a1d;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+#wrap_wrap{
+    min-width: 1400px;
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 만약 상단 헤더가 고정(fixed)되어 있다면, 
+   이동 시 제목이 헤더 뒤로 숨지 않게 여백을 줍니다. */
+.section {
+    scroll-margin-top: 60px; /* 헤더 높이에 맞춰 숫자를 조절하세요 */
+}
+/* header ============================= */
+
+#header_wrap {
+    background-color: #f4ede6;
+    height: 80px;
+    border-bottom: 3px solid #3f2a1d;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 화면 전체 너비 사용 */
+    box-sizing: border-box;
+}
+
+.header {
+    max-width:  1320px;
+    /* 실제 콘텐츠가 들어갈 너비 */
+    width: 100%;
+    height: 100%;
+    /* 부모 높이(130px)를 그대로 사용 */
+    margin: 0 auto;
+    /* 화면 중앙 정렬 */
+    display: flex;
+    /* 로고와 gnb를 가로로 배치 */
+    justify-content: space-between;
+    /* 양 끝으로 배치 */
+    align-items: center;
+    /* 로고와 메뉴를 세로 중앙 정렬 */
+    overflow: hidden;
+    box-sizing: border-box;
+    
+
+}
+.Login{
+    position: absolute;
+    top: 10px;
+    right: 90px;
+    list-style: none;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+
+    width: 50px; 
+    height: 50px;
+    text-align: center;
+    line-height: 50px; /* 글자 세로 중앙 정렬 */
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.Login:hover{
+   /* 글자만 투명하게 숨기기 */
+    color: transparent; 
+    
+    /* 배경 이미지 출력 */
+    background-image: url(../img/1-2.1.png);
+}
+
+.logo {
+    padding-top: 18px;
+    margin-bottom: 15px;
+    padding-right: 30px;
+}
+
+.logo img {
+    width: 62%;
+}
+
+.gnb {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.gnb>li>a {
+    display: block;
+    color: #3f2a1d;
+    font-size: 20px;
+    padding: 58px 48px 24px 25px;
+    /* background-color: yellow; */
+    font-weight: bold;
+}
+.gnb>li>a:hover{
+    color: #6c3f2a
+}
+/* [메인 배너] Swiper 영역========================= */
+
+#banner_wrap {
+    height: auto !important;
+    margin-top: 80px;
+    text-align: center;
+}
+
+#banner_wrap .swiper {
+    height: auto; /* 고정된 px 대신 auto를 사용하세요 */
+    overflow: visible; /* 잘림 방지 */
+}
+
+#banner_wrap .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#banner_wrap .swiper,
+#banner_wrap .swiper-slide {
+    height: auto !important;
+}
+
+#banner_wrap .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto; /* 이미지 비율에 맞춰 높이가 자동으로 잡힘 */
+    object-fit: contain; /* 이미지가 잘리지 않고 전체가 들어감 */
+}
+
+#banner_wrap .swiper-pagination-bullet {
+    background: #3f2a1d;
+}
+
+/* 쩜 색상 바꾸기 */
+
+
+
+/* 탭부분 ============================== */
+#section1_wrap {
+    width: 1320px;
+    margin: 180px auto;
+}
+
+/* 탭 버튼 스타일 */
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    gap: 280px;
+    margin-bottom: 100px;
+}
+
+.tab-btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #3f2a1d;
+    /* 도담 브랜드 메인 컬러 테두리 */
+    border-radius: 50%;
+    /* 완전한 동그라미 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    /* 배경 투명 */
+    transition: all 0.3s ease;
+    /* 부드러운 전환 효과 */
+    /* 추가: 아이콘과 테두리 사이의 여백 */
+    padding: 5px;
+}
+
+
+
+/* 아이콘 이미지 기본 스타일 */
+.tab-btn img {
+    width: 100%;
+    /* 부모의 padding 제외한 영역에 꽉 참 */
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* 마우스를 올렸을 때(Hover) & 활성화되었을 때(Active) */
+.tab-btn:hover,
+.tab-btn.active {
+    background-color: #3f2a1d;
+    /* 배경색이 진한 갈색으로 채워짐 */
+}
+
+.tab-btn:hover img,
+.tab-btn.active img {
+    /* filter 설명: 
+       brightness(0) invert(1)로 흰색을 만든 뒤, 
+       sepia와 saturate를 섞어 #f4ede6과 유사한 따뜻한 베이지색 구현 
+    */
+    filter: brightness(0) invert(1) sepia(0.5) hue-rotate(340deg) saturate(0.2);
+    opacity: 0.9;
+    /* 색감을 더 부드럽게 */
+}
+
+
+.tab-btn.active {
+    opacity: 1;
+    /* 활성 상태는 진하게 */
+    transform: translateY(-5px);
+    /* 살짝 위로 이동 효과 */
+}
+
+.tab-btn img {
+    width: 100%;
+}
+
+/* 콘텐츠 스타일 */
+.tab-item {
+    display: none;
+    /* 기본적으로 모두 숨김 */
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    /* 이미지와 글자 사이의 간격. 이 숫자를 줄이면 글자가 왼쪽으로 이동합니다 */
+}
+
+.tab-item.active {
+    display: flex;
+    /* active 클래스가 붙은 것만 보임 */
+}
+
+.tab-img {
+    width: 600px;
+}
+
+.tab-img img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.tab-text {
+    width: 500px;
+    /* 추가: 오른쪽 여백을 조금 주어 전체적으로 왼쪽으로 밀기 */
+    margin-right: 20px;
+}
+
+.tab-text h3 {
+    font-size: 32px;
+    color: #3f2a1d;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.tab-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #3f2a1d;
+    margin-bottom: 40px;
+    font-family: 'Pretendard';
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* 버튼(a태그) 스타일 */
+.btn-more {
+    display: block;
+    /* 3. block으로 변경해야 중앙 배치가 안정적임 */
+    width: fit-content;
+    /* 4. 글자 길이에 딱 맞게 너비 조절 */
+    padding: 15px 60px;
+    background-color: #6c3f2a;
+    color: #f4ede6;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    margin: 0 auto;
+}
+
+.btn-more:hover {
+    background-color: #3f2a1d;
+}
+
+/* section2_wrap------------------------------------------------------s */
+#section2_wrap {
+    /* 배경 이미지 경로를 실제 파일 위치로 맞춰주세요 */
+    background: url('../img/1-30.jpg') no-repeat center center / cover;
+    height: 1500px;
+    background-attachment: fixed;
+    /* 배경은 고정되고 박스만 움직이게 (선택) */
+    padding: 150px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* 캐릭터가 박스 밖으로 나갈 경우 대비 */
+}
+
+/* 공통 박스 스타일 */
+.intro-box {
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    /* 반투명 흰색 */
+    border-radius: 60px;
+    padding: 60px;
+    width: 65%;
+    /* 박스 가로 너비 조절 */
+    max-width: 1000px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* 이미지와 텍스트를 양 끝으로 벌림 */
+    overflow: visible;
+    /* 글자나 캐릭터가 살짝 튀어나와도 잘리지 않게 함 */
+    box-sizing: border-box;
+    /* 패딩 포함 크기 계산 */
+}
+
+/* 첫 번째 박스 (브랜드 소개): 왼쪽 정렬 */
+.intro-box:not(.reverse) {
+    width: 1256px;
+    min-height: 650px;
+    /* 고정 height 대신 최소 높이 사용 */
+    height: auto;
+    /* 내용이 많아지면 자동으로 늘어나게 함 */
+    padding: 40px 60px;
+    /* 상하 여백을 주어 글자 잘림 방지 */
+    box-sizing: border-box;
+    transform: translateX(95px);
+    /* 중앙에서 왼쪽으로 살짝만 이동 */
+}
+
+/* 두 번째 박스 (캐릭터 소개): 오른쪽 정렬 */
+.intro-box.reverse {
+    width: 1198px;
+    height: 680px;
+    align-self: flex-end;
+    /* 오른쪽 정렬 유지 */
+    margin-right: 50px;
+    /* 화면 오른쪽 여백 (조절 가능) */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    transform: translateX(-50px);
+    /* 중앙에서 오른쪽으로 살짝만 이동 */
+}
+
+/* 텍스트 영역 */
+.intro-text {
+    flex: 1;
+    /* 남은 공간을 모두 사용 */
+    padding: 0 60px;
+    /* 좌우 여백을 충분히 주어 글자가 박스 끝에 붙지 않게 함 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 텍스트를 박스 높이의 중앙에 배치 */
+}
+
+.reverse .intro-text {
+    text-align: right;
+    /* 두 번째 박스 텍스트는 오른쪽 정렬 */
+    padding-right: 40px;
+}
+
+.intro-text h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #3b2416;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    word-break: keep-all;
+    /* 단어 단위로 줄바꿈하여 한글이 예쁘게 정렬됨 */
+    margin: 0;
+    /* 기본 마진 제거로 위치 밀림 방지 */
+    /* 잘림 방지 */
+    font-family: 'Pretendard';
+    font-size: 16px;
+}
+
+/* 이미지 영역 */
+.intro-img {
+    flex: 0 0 400px;
+    /* 이미지 영역 너비를 400px로 고정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-img img {
+    max-width: 100%;
+    /* 부모 영역(400px)을 넘지 않음 */
+    max-height: 380px;
+    /* 박스 높이(438px)보다 작게 설정하여 잘림 방지 */
+    object-fit: contain;
+}
+
+/* 시안처럼 캐릭터를 살짝 아래로 어긋나게 하고 싶다면 */
+.reverse .intro-img {
+    transform: translateY(0px);
+}
+
+/* 캐릭터 소개(reverse) 텍스트 정렬 */
+.intro-box.reverse .intro-text {
+    text-align: right;
+    /* 캐릭터 소개는 오른쪽 정렬 */
+}
+
+/* section2_wrap----------------------------------------------------e */
+/* section3_video----------------------------------------------------s */
+.main video {
+    position: absolute;
+    top: 0;
+    left: 0; /* 중앙 정렬 대신 0으로 시작 */
+    width: 100%;    /* 부모 넓이에 맞춤 */
+    height: 100%;   /* 부모 높이에 맞춤 */
+    object-fit: cover; /* 핵심! 비율을 유지하며 부모 요소를 꽉 채움 */
+    z-index: -1000;
+    transform: scale(0.8);
+}
+
+.main {
+    display: block;
+    overflow: hidden;
+    height: 993px; /* 혹은 100vh (화면 꽉 차게 할 때) */
+    position: relative;
+}
+/* section4_slider------------------------------------------------s */
+#section4_slider { overflow: hidden; padding: 60px 0; height: 873px;}
+
+#section4_slider .slider-title{
+    text-align: center;
+    padding: 130px 0 50px 0;
+}
+#section4_slider .slider-track {
+   display: flex;
+    /* 1. 전체 너비: 300px * 18개 = 5400px */
+    gap: 50px; 
+    animation: scroll0 20s linear infinite; /* 개수가 줄었으니 속도를 위해 시간을 조금 줄여도 좋아요 */
+}
+
+/* 마우스 올리면 멈춤 */
+#section4_slider .slider-track:hover {
+    animation-play-state: paused;
+}
+
+#section4_slider .slide1 {
+    width: 300px;
+    flex-shrink: 0; /* 중요: 이미지가 많아도 크기가 줄어들지 않게 고정 */
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#section4_slider .slide img { width: 200%; margin-bottom: 15px; }
+
+.slide-text {
+    font-size: 15px; font-weight: bold; color: #3b2416;
+    text-align: center; margin-top: 20px;
+}
+.slide-text1{
+    font-size: 11px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+}
+.slide-text2{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+#section4_slider .slide1:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+/* 왼쪽으로 흐르는 애니메이션 정의 */
+@keyframes scroll0 {
+      0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -2300px;
+        
+        /*slide_inner의 ul길이와 동일하게 - 설정합니다!*/}
+}
+/* section4_slider------------------------------------------------e */
+/*section4_fixed--------------------------------------------------s  */
+#section4_fixed {
+    padding: 5px 0;
+    margin-bottom: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.fixed-container {
+    margin: 0 auto;
+}
+
+.fixed-track {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    gap: 30px;               /* 제품 사이 간격 */
+}
+
+.slide2 {
+    /* 슬라이드 전체 너비를 이미지 가로 폭에 맞춥니다 */
+    width: 406px; 
+    margin: 0 10px; /* 제품 간의 간격 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* 회색 제품 박스 */
+.gray-box {
+    height: 271px;  /* 원하는 세로 크기 */
+    margin-bottom: 20px;
+}
+
+.gray-box img {
+    /* [중요] 이미지가 잘리지 않고 박스 안에 다 들어오게 설정 */
+    /* 비율을 유지하며 꽉 채우려면 cover, 전체가 다 보이게 하려면 contain */
+    width: 90%;
+    margin-top: 30px;
+}
+
+/* [마우스 효과] 마우스를 올리면 살짝 위로 올라가고 손가락 모양으로 변경 */
+.slide2:hover {
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+
+/* 텍스트 스타일 (기존 Pretendard 유지) */
+.slide2-text {
+    font-size: 17px; font-weight: bold; color: #3b2416;
+    text-align: center;
+}
+.slide2-text1{
+    font-size: 11px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+}
+.slide2-text2{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+/*section4_fixed--------------------------------------------------e  */
+/* section5_ad---------------------------------------------------s */
+#section5_ad {
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.ad-card {
+    transition: all 0.4s ease;
+}
+
+.ad-card a { text-decoration: none; }
+
+/* 이미지 박스 설정 */
+.ad-img-box {
+    height: 271px;
+    position: relative; /* [필수] 이게 없으면 글자가 화면 밖으로 도망가요! */
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.ad-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 박스에 꽉 차게 */
+    transition: transform 0.5s ease;
+}
+
+/* 텍스트 스타일 */
+.product-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #3b2416;
+    margin-bottom: 12px;
+}
+
+.product-desc {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    word-break: keep-all; /* 단어 단위 줄바꿈 */
+}
+
+.product-price {
+    font-size: 17px;
+    font-weight: bold;
+    color: #3b2416;
+}
+
+/* [광고 느낌 포인트] 마우스 올리면 이미지가 살짝 커짐 */
+.ad-card:hover img {
+    transform: scale(1.05);
+}
+
+.ad-card:hover .product-name {
+    text-decoration: underline; /* 이름에 밑줄 */
+}
+
+/* 글자 박스: 이미지 위로 띄우기 */
+.ad-overlay-text {
+    position: absolute; /* [필수] 부모 박스 기준으로 공중에 띄움 */
+    bottom: 20px;       /* 아래에서 20px 띄움 */
+    left: 20px;         /* 왼쪽에서 20px 띄움 */
+    z-index: 10;        /* 이미지보다 위에 보이게 순서 정하기 */
+    text-align: left;  /* 글자를 왼쪽 정렬 */
+    pointer-events: none; /* 마우스 클릭이 이미지를 통과하게 함 */
+    line-height: 70px;
+    margin-bottom: 70px;
+    margin-left: 200px;
+}
+
+/* 글자 디자인 */
+.overlay-sub {
+    font-size: 40px;
+    color: #3b2416;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px; /* 글자 간격을 좁혀서 더 세련되게 */;
+}
+
+.overlay-title {
+    font-family: 'Pretendard';
+    font-size: 32px;
+    color: #3b2416;
+    margin: 0;
+    text-align: center;
+    line-height: 1.1;
+}
+/* section5_ad---------------------------------------------------e */
+/* section6_hero--------------------------------------------------s */
+/* 부모 박스: 기준점 설정 */
+.hero-img-box {
+    height: 840px;
+    position: relative; /* 중요: 이게 있어야 글자가 이미지 안으로 들어옵니다 */
+    margin-top: 280px;
+    text-align: center;
+    margin: 150px auto;
+    
+    background: url(../img/1-40.jpg) no-repeat center;
+}
+
+/* 이미지 위에 겹칠 글자 박스 */
+.hero-text-box {
+    position: absolute;
+    /* 위치 조절: 왼쪽 하단에서 살짝 띄움 (원하는 위치에 따라 top, right 등으로 변경 가능) */
+    bottom: 40px;
+    left: 30px;
+    line-height: 25px;
+    margin-left: 210px;
+    margin-bottom: 70px;
+    text-align: left;
+    z-index: 10;
+}
+.hero-title{
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 50px;
+
+}
+.hero-desc{
+    font-size: 18px;
+    font-family: 'Pretendard';
+    text-align: center;
+}
+/* section6_hero--------------------------------------------------e */
+/* section7_slider------------------------------------------------s */
+#section7_slider { overflow: hidden; padding: 0px 0; height: 1000px;}
+
+#section7_slider .slider-title{
+    text-align: center;
+    padding: 40px 0 10px 0;
+}
+#section7_slider .slider-track {
+   display: flex;
+    /* 1. 전체 너비: 300px * 18개 = 5400px */
+    gap: 30px; 
+    animation: scroll1 30s linear infinite; /* 개수가 줄었으니 속도를 위해 시간을 조금 줄여도 좋아요 */
+}
+
+/* 마우스 올리면 멈춤 */
+#section7_slider .slider-track:hover {
+    animation-play-state: paused;
+}
+
+#section7_slider .slide1 {
+    width: 394px;
+    flex-shrink: 0; /* 중요: 이미지가 많아도 크기가 줄어들지 않게 고정 */
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#section7_slider .slide img { width: 100%; margin-bottom: 15px;}
+
+.slide-text {
+    font-size: 17px; font-weight: bold; color: #3b2416;
+    text-align: center; margin-top: 20px;
+}
+.slide-text1{
+    font-size: 11px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+}
+.slide-text2{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.slide1:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+/* 왼쪽으로 흐르는 애니메이션 정의 */
+@keyframes scroll1 {
+      0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -4200px;
+        /*slide_inner의 ul길이와 동일하게 - 설정합니다!*/}
+}
+/* section7_slider------------------------------------------------e */
+/* fixed-container-------------------------------------------------s */
+#section7_fixed {
+    padding: 20px 0;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+#section7_fixed .fixed-container {
+    margin: 0 auto;
+}
+
+#section7_fixed .fixed-track {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    gap: 30px;               /* 제품 사이 간격 */
+}
+
+#section7_fixed .slide2 {
+    /* 슬라이드 전체 너비를 이미지 가로 폭에 맞춥니다 */
+    width: 406px; 
+    margin: 0 10px; /* 제품 간의 간격 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* 회색 제품 박스 */
+#section7_fixed .gray-box {
+    width: 406px;   /* 원하는 가로 크기 */
+    height: 271px;  /* 원하는 세로 크기 */
+    overflow: hidden;
+    background-color: #f5f5f5; /* 이미지가 로딩되기 전 보일 배경색 */
+    margin-bottom: 20px;
+}
+
+#section7_fixed .gray-box img {
+    /* [중요] 이미지가 잘리지 않고 박스 안에 다 들어오게 설정 */
+    /* 비율을 유지하며 꽉 채우려면 cover, 전체가 다 보이게 하려면 contain */
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* [마우스 효과] 마우스를 올리면 살짝 위로 올라가고 손가락 모양으로 변경 */
+#section7_fixed .slide2:hover {
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+
+/* 텍스트 스타일 (기존 Pretendard 유지) */
+.slide-text {
+    font-size: 17px; font-weight: bold; color: #3b2416;
+    text-align: center;
+}
+.slide-text1{
+    font-size: 11px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+}
+.slide-text2{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+/* fixed-container-------------------------------------------------e */
+/* section8_ad---------------------------------------------------s */
+#section8_ad {
+    padding: 90px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+#section8_ad .ad-card {
+    transition: all 0.4s ease;
+}
+
+#section8_ad .ad-card a { text-decoration: none; }
+
+/* 이미지 박스 설정 */
+#section8_ad .ad-img-box {
+    height: 366px;
+    position: relative; /* [필수] 이게 없으면 글자가 화면 밖으로 도망가요! */
+    background-color: #f9f9f9;
+
+}
+
+#section8_ad .ad-img-box img {
+    object-fit: cover; /* 이미지가 박스에 꽉 차게 */
+    transition: transform 0.5s ease;
+}
+
+/* 텍스트 스타일 */
+#section8_ad .product-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #3b2416;
+    margin-bottom: 12px;
+}
+
+#section8_ad .product-desc {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    word-break: keep-all; /* 단어 단위 줄바꿈 */
+}
+
+#section8_ad .product-price {
+    font-size: 17px;
+    font-weight: bold;
+    color: #3b2416;
+}
+
+/* [광고 느낌 포인트] 마우스 올리면 이미지가 살짝 커짐 */
+#section8_ad .ad-card:hover img {
+    transform: scale(1.05);
+}
+
+#section8_ad .ad-card:hover .product-name {
+    text-decoration: underline; /* 이름에 밑줄 */
+}
+
+/* 글자 박스: 이미지 위로 띄우기 */
+#section8_ad .ad-overlay-text {
+    position: absolute; /* [필수] 부모 박스 기준으로 공중에 띄움 */
+    top: 80px;       /* 아래에서 20px 띄움 */
+    left:30px;         /* 왼쪽에서 20px 띄움 */
+    z-index: 10;        /* 이미지보다 위에 보이게 순서 정하기 */
+    text-align: left;  /* 글자를 왼쪽 정렬 */
+    pointer-events: none; /* 마우스 클릭이 이미지를 통과하게 함 */
+    line-height: 70px;
+    margin-bottom: 70px;
+    margin-left: 30px;
+}
+
+/* 글자 디자인 */
+#section8_ad .overlay-sub {
+    font-size: 30px;
+    color: #3b2416;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px; /* 글자 간격을 좁혀서 더 세련되게 */;
+    
+}
+
+#section8_ad .overlay-title {
+    font-size: 15px;
+    color: #3b2416;
+    margin: 0;
+    text-align: center;
+    line-height: 1.1;
+    text-shadow: 2px 5px 8px rgba(81, 47, 12, 0.5);
+}
+/* section5_ad---------------------------------------------------e */
+/* section9_event------------------------------------------------s */
+#section9_event {
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+    /* 추가/수정할 내용 */
+    display: flex;
+    flex-direction: row; /* 요소를 가로로 배치 */
+    justify-content: center; /* 가운데 정렬 (space-between 대신 추천) */
+    gap: 80px; /* 이미지 사이의 간격 조절 */
+    flex-wrap: wrap; /* 화면이 좁아지면 자동으로 줄바꿈 되도록 설정 */
+}
+.event-header{
+   display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px; /* 'Event' 글자와 이미지 사이 간격 */}
+/* 1. 이미지의 기본 상태 설정 */
+#section9_event img {
+    transition: transform 0.3s ease; /* 변화를 0.3초 동안 부드럽게 만듦 */
+    cursor: pointer; /* 마우스를 올렸을 때 손가락 모양으로 변경 */
+    
+}
+.event-header a{
+    margin-left: 5px;
+
+}
+/* 2. 마우스를 올렸을 때(hover)의 상태 설정 */
+#section9_event img:hover {
+    transform: scale(1.1); /* 이미지를 1.1배 확대 (1.05~1.1 정도가 적당합니다) */
+    z-index: 1; /* 확대될 때 옆 이미지보다 위로 올라오게 설정 */
+
+}
+/* section9_event------------------------------------------------e */
+/* section10-----------------------------------------------------s */
+.recipe-section {
+    background-color: #CFC3BD; /* 전체 배경 */
+    padding: 100px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-family: 'Pretendard', sans-serif;
+    height: 750px;
+}
+
+.recipe-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 상단 검정 라벨 */
+.main-title {
+    width: 100%;           /* 가로 너비를 부모 요소 기준 꽉 채움 */
+    box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 설정 */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: #3f2a1d;
+    margin-bottom: 30px;
+}
+
+/* 탭 디자인 */
+.recipe-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tab {
+    background-color: #a69286; /* 비활성 탭 색상 */
+    color: #433228;
+    padding: 15px 30px;
+    border-radius: 30px 30px 0 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 브라우니 탭 (활성화/호버 상태) */
+.tab.active, .tab:hover {
+    background-color: #433228;
+    color: white;
+}
+
+/* 메인 카드 박스 */
+.recipe-card-wrap{
+    background-color: #f4ede6; /* 베이지 배경색 */
+    padding: 40px;
+    border-radius: 0 0 20px 20px;
+}
+
+.content-title {
+    color: #433228;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-family: 'YeogiOttaeJalnan';
+}
+
+.content-flex {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+}
+
+/* 왼쪽 이미지 영역 */
+.left-column {
+    flex: 1;
+}
+
+.recipe-img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.recipe-btn {
+    background-color: #433228;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-family: 'YeogiOttaeJalnan';
+    margin-top: 20px;
+    font-size: 15px;
+    width: 100%;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.recipe-btn:hover{
+    background-color: #f4ede6;
+    color: #6c3f2a;
+    border: 2px solid #3f2a1d;
+}
+/* 오른쪽 텍스트 영역 */
+.right-column {
+    flex: 1;
+}
+
+.info-group h3 {
+    background-color: #433228;
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+    font-family: 'Pretendard';
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.info-group p, .info-group ul {
+    font-size: 16px;
+    color: #433228;
+    line-height: 1.6;
+    font-family: 'Pretendard';
+    margin-bottom: 20px;
+    margin-left: 18px;
+}
+
+.info-group ul {
+    list-style: disc;
+    padding: 0;
+}
+/* section10-----------------------------------------------------e */
+/* section11_slider----------------------------------------------s */
+#section11_slider { overflow: hidden; padding: 120px 0 0 0; height: 800px;}
+
+#section11_slider .slider-title{
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: #3f2a1d;
+    margin-bottom: 30px;
+    
+}
+#section11_slider .slider-track {
+   display: flex;
+   margin-top: 50px;
+    /* 1. 전체 너비: 300px * 18개 = 5400px */
+    gap: 30px; 
+    animation: scroll2 28s linear infinite; /* 개수가 줄었으니 속도를 위해 시간을 조금 줄여도 좋아요 */
+}
+
+/* 마우스 올리면 멈춤 */
+#section11_slider .slider-track:hover {
+    animation-play-state: paused;
+}
+
+#section11_slider .slide1 {
+    width: 305px;
+    flex-shrink: 0; /* 중요: 이미지가 많아도 크기가 줄어들지 않게 고정 */
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#section11_slider .slide img { width: 100%; margin-bottom: 15px;}
+
+.slide-text {
+    font-size: 17px; font-weight: bold; color: #3b2416;
+    text-align: center; margin-top: 20px;
+}
+.slide-text1{
+    font-size: 11px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+}
+.slide-text2{
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#section11_slider .slide1:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+/* 왼쪽으로 흐르는 애니메이션 정의 */
+@keyframes scroll2 {
+      0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -5100px;
+        /*slide_inner의 ul길이와 동일하게 - 설정합니다!*/}
+}
+/* section11_slider----------------------------------------------e */
+/* section12------------------------------------------------------s */
+#section12{
+    margin-top:300px ;
+    text-align: center;
+    width: 1317px;
+    height: 442px;
+    margin: 0 auto;
+    padding-bottom: 600px;
+}
+#section12 h2{
+    padding-top: 20px;
+}
+.shop{
+    float: left;
+}
+.map{
+    float: right;
+    display: flex;
+}
+/* section12------------------------------------------------------e */
+/* section13------------------------------------------------------s */
+#section13{
+    height: 844px;
+    margin-bottom: -20px;
+    
+}
+/* footer -------------------------------------------s*/
+.footer{
+    background: url(../img/1-100.png) no-repeat center;
+    height: 844px;
+    width: 100%;
+}
+.footer img{
+  width: 100%;
+  text-align: center;
+}
+.footer_box{
+    overflow: hidden;
+    width: 1320px;
+    margin: 0 auto;
+    margin-left: 150px;
+    padding-top: 250px;
+}
+/* Social ----------------------------------------------s*/
+.Social h5{
+    font-size: 28px;
+    margin-left: 95px;
+     margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* 1. 소셜 리스트의 링크 설정 */
+.Social ul li a {
+    display: flex;         /* 아이콘과 글자를 가로로 나란히 */
+    gap: 10px;            /* 아이콘과 글자 사이의 간격 */
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 8px;    /* 줄 간격 */
+    margin-left: 90px;     /* 제목과 줄 맞추기 위해 추가 */
+}
+.Social img{
+    width: 2%;
+}
+.Social span{
+    font-size: 15px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+}
+/* Company -----------------------------------------------s*/
+.Company h5{
+    font-size: 28px;
+    margin-left: 90px;
+     margin-top: 20px;
+    margin-bottom: 10px;
+}
+.Company p{
+    font-size: 15px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    margin-left: 90px;
+}
+/*Customer-------------------------------------------------s  */
+.Customer h5{
+    font-size: 25px;
+    margin-left: 90px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.Customer p{
+    font-size: 15px;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    margin-left: 90px;
+}
+/* section13------------------------------------------------------e */

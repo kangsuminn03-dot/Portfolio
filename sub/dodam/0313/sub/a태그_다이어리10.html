@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400px">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/1-2.1.png">
+    <title>DODAM_Diary</title>
+    <link rel="stylesheet" href="./css/a태그_다이어리10copy.css">
+</head>
+<body><div class="month">
+            <h6>MONTH</h6>
+            <ul>
+                <li><a href="./a태그_다이어리1.html">1</a></li>
+                <li><a href="./a태그_다이어리2.html">2</a></li>
+                <li><a href="./a태그_다이어리3.html">3</a></li>
+                <li><a href="./a태그_다이어리4.html">4</a></li>
+                <li><a href="./a태그_다이어리5.html">5</a></li>
+                <li><a href="./a태그_다이어리6.html">6</a></li>
+                <li><a href="./a태그_다이어리7.html">7</a></li>
+                <li><a href="./a태그_다이어리8.html">8</a></li>
+                <li><a href="./a태그_다이어리9.html">9</a></li>
+                <li><a href="./a태그_다이어리10.html" class="active">10</a></li>
+                <li><a href="./a태그_다이어리11.html">11</a></li>
+                <li><a href="./a태그_다이어리12.html">12</a></li>
+            </ul>
+        </div>
+    <div id="diary_wrap">
+    
+    </div>
+    <script>
+  // 모든 월(a 태그) 요소를 가져옵니다.
+  const monthLinks = document.querySelectorAll('.month ul li a');
+
+  monthLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // 1. 기존에 active가 붙어있던 요소에서 클래스 제거
+      monthLinks.forEach(item => item.classList.remove('active'));
+
+      // 2. 현재 클릭한 요소에 active 클래스 추가
+      this.classList.add('active');
+      
+      // 참고: 실제로 페이지가 이동(href)해야 한다면 
+      // 이 스크립트가 실행된 직후 페이지가 넘어가므로 
+      // 새 페이지의 HTML에도 해당 숫자에 active가 붙어있어야 합니다.
+    });
+  });
+</script>
+</body>
+</html>

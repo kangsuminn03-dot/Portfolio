@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400px">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/1-2.1.png">
+    <title>DODAM_Art</title>
+    <link rel="stylesheet" href="./css/a태그_작품보기.css">
+</head>
+<body>
+    <div class="wrap">
+        <h1>A work of art</h1>
+        <div class="char-container" onclick="toggleBubble()">
+        <div id="speech-bubble" class="bubble">
+            <h5>네덜란드 화가 요하네스 베르메르의 <진주 귀걸이를 한 소녀></h5>
+            <h6>[진주 귀걸이를 한 소녀, 핵심 정보]</h6>
+            <p>작품:《진주 귀걸이를 한 소녀》(Meisje met de parel)
+                <br>화가:요하네스 베르메르
+                <br>제작 시기:1665년경(정확한 연도는 불명확)
+                <br>형식:트로니(특정 인물 초상보다 인물 연구화)로 보는 해석이 많음
+                <br>주제:소녀의 눈빛과 귀걸이, 극적인 조명으로 신비함을 강조
+                <br>배경:원래 녹색 커튼 배경이었을 가능성 등 복원·분석 연구가 있음
+            </p>
+            <h4><진주 귀걸이를 한 소녀> 이색 TMI</h4>
+            <ul>
+                <li>1. 사실 '진주'가 아닐 수도 있다?</li>
+                <li>2.눈썹이 없는 비밀</li>
+                <li>3.배경은 원래 '검은색'이 아니었다?</li>
+                <li>4.이 소녀는 누구일까? (초상화가 아니다!)</li>
+            </ul>
+        </div>
+        <img src="./img/1-4.1.png" alt="Dali" class="character">
+    </div>
+
+    </div>
+
+
+
+    <script>
+function toggleBubble() {
+    const bubble = document.getElementById('speech-bubble');
+    // 'show' 클래스가 있으면 제거하고, 없으면 추가함 (Toggle)
+    bubble.classList.toggle('show');
+}
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+body{
+    font-size: 17px;
+    line-height: 22px;
+    font-family: 'Pretendard';
+    text-align: center;
+    background-color: #cabbb5;
+}
+#diary_wrap{
+    background: url(../img/1-116.5.jpg) no-repeat center top; /* 반복 방지 및 상단 중앙 정렬 */
+    background-size: contain; /* 핵심: 배경 이미지가 잘리지 않고 화면에 다 보이게 함 */
+    width: 100%;
+    height: auto;     /* 높이를 고정하지 말고 내용에 맞게 */
+    min-height: 1000px;
+    margin: 0 auto;
+    margin-right:60px ;
+    position: relative; /* 자식 요소들의 기준점이 됨 */
+    overflow-x: auto;   /* 화면이 너무 작아지면 가로 스크롤 허용 */
+}
+/* month---------------------------------------s */
+.month{
+    display: flex;
+    margin-left: 600px;
+    padding-top: 60px;
+}
+.month h6{
+    color: #452516;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px;
+
+}
+.month ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    align-items: center;
+}
+.month ul li a{
+    color: #452516;
+    transition: color 0.3s;
+}
+.month ul>li>a:hover,
+.month ul>li>a.active {
+    color: #452516;
+    background-color: #f4ede6;
+    padding: 5px 8px;
+    border-radius: 50px;
+    transition: all 0.3s; /* 부드러운 전환 효과 */
+}
+/* month---------------------------------------e */
+@media (max-width: 768px) {
+    /* 모바일에서는 배경과 숫자의 간격을 재조정 */
+    .month {
+        margin-left: 40%; /* 화면 중앙 근처로 이동 */
+        transform: translateX(-50%);
+        padding-top: 5%;
+    }
+}
