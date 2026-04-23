@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스머프</title>
+    <link rel="stylesheet" href="./css/style3.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+<header>
+    <a href="./index.html" class="logo">
+        <img src="./img/logo.jpg" alt="로고">
+    </a>
+
+    <ul>
+        <li><a href="#story-section">Story</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#daily-routine">Daily routine</a></li>
+        <li><a href="#video">Video</a></li>
+    </ul>
+</header>
+
+<div id="story-section" class="mailbox-container">
+    <div id="mailbox-bg" onclick="showMessage()"></div>
+
+    <div id="message" class="hidden-message">
+        <h1 style="margin: 0;">스누피</h1>
+        <h3>첫 등장</h3>
+        <p>1950년 10월 4일
+            <br>
+            <br>스누피는 평범한 비글이 아닙니다. 
+            <br>그는 책을 사랑하는 사람이자 책 작가입니다. 
+           <br> 그는 미술품 수집가이자 루트비어 애호가입니다.
+             <br>게다가 그의 멈출 수 없는 상상력은 그의 삶을 결코 
+             <br>평범하지 않게 만드는 데 도움을 줍니다. 
+             <br>플라잉 에이스로서 그는 영웅적으로 레드 바론과 싸웁니다.
+              <br>조 쿨로서 그는 캠퍼스의 가장 큰 존재다. 하지만 상상의 모험은
+               <br>개집에서 낮잠을 자고, 그 둥근머리 아이가 특별히 준비해준 
+               <br>당연한 저녁 식사에서 깨어나는 것만큼 좋습니다.
+        </p>
+        <h3 class="box">알고 계셨나요?</h3>
+        <p>스누피는 하루에 한 단어씩 "전쟁과 평화"를 읽습니다.</p>
+        </div>
+</div>
+
+
+
+<div id="interests" class="container">
+  <div class="card">
+    <img src="./img/169504610_b6410ff0-049c-4f19-a53e-b0b048aadc40.jpg" alt="저녁 식사">
+    <h3>저녁 식사 시간</h3>
+    <p>스누피는 식사 시간을 절대 잊지 않고, 
+        <br>종종 행복한 춤으로 축하합니다.</p>
+  </div>
+
+  <div class="card">
+    <img src="./img/64775781_pluma.jpg" alt="글쓰기">
+    <h3>글쓰기</h3>
+    <p>세계적으로 유명한 작가로서 스누피는 
+        <br>끊임없이 위대한 미국 소설을 쓰려고 
+        <br>노력하고 있습니다.</p>
+  </div>
+
+  <div class="card">
+    <img src="./img/다운로드.jpg" alt="상상 이야기">
+    <h3>상상 이야기</h3>
+    <p>스누피는 다양한 캐릭터가 되는 상상을 
+        <br>좋아하는데,특히 1차 세계대전 
+        <br>비행 에이스가 그렇습니다.</p>
+  </div>
+</div>
+
+
+<div id="daily-routine" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./img/다운로드 - 2026-04-20T153706.822.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/다운로드 - 2026-04-20T153505.280.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/nichipupa on TikTok.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./img/다운로드 - 2026-04-20T153453.357.jpg" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="./img/snoopy matcha lover.jpg" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="./img/Ghi.jpg" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="./img/snoopy (1).jpg" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="./img/Snoopy disfrutando de de un día de playa.jpg" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="./img/Snoopy.jpg" alt="" srcset=""></div>
+            <div class="swiper-slide"><img src="./img/다운로드 - 2026-04-20T153533.433.jpg" alt="" srcset=""></div>
+        </div>
+        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <section id="video"    class="main-visual">
+    <div class="overlay"></div>
+    <iframe class="bg-video" 
+        src="https://www.youtube.com/embed/D8li9bL4Gac?autoplay=0&mute=0&controls=1&modestbranding=1&playlist=D8li9bL4Gac&loop=1" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+    </iframe>
+</section>
+
+
+    
+<footer>
+        <div class="footer-bg">
+            <img src="./img/다운로드 (1).jpg" alt="푸터 이미지">
+        </div>
+    </footer>
+
+
+
+    <script>const videoSwiper = new Swiper(".videoSwiper", {
+  navigation: {
+    nextEl: ".next-video",
+    prevEl: ".prev-video",
+  },
+  pagination: {
+    el: ".paging-video",
+    clickable: true,
+  },
+  on: {
+    slideChange: function () {
+      // 모든 iframe에 일시정지 신호를 보냅니다
+      const iframes = document.querySelectorAll('.videoSwiper iframe');
+      iframes.forEach(iframe => {
+        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      });
+    },
+  },
+});</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,          // 한 화면에 보여줄 슬라이드 개수를 3개로 설정!
+    spaceBetween: 30,         // 슬라이드 사이의 간격 (원하는 만큼 조절)
+    centeredSlides: true,      // 3개 중 가운데 이미지를 활성화
+    loop: true,                // 무한 반복
+    
+    // 네비게이션과 페이지네이션은 그대로 두시면 됩니다.
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
+    </script>
+
+
+
+
+<script>function showMessage() {
+    const msg = document.getElementById('message');
+    
+    // 현재 안 보이고 있다면 보이게 하고, 보이고 있다면 다시 숨깁니다.
+    if (msg.style.display === 'none' || msg.style.display === '') {
+        msg.style.display = 'inline-block';
+    } else {
+        msg.style.display = 'none';
+    }
+}</script>
+</body>
+</html>
