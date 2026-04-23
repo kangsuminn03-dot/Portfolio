@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/logo 아이콘.png">
+    <link rel="stylesheet" href="./css/sub1.css">
+    <title>연</title>
+</head>
+<body>
+    <section id="section2">
+      <div class="section2_bg">
+          <nav class="section2-gnb">
+            <a href="./index.html"><img src="./img/logo.png" alt="연 로고" class="mob-logo"></a>
+             <ul>
+                 <li><a href="./sub1.html">Story</a></li> 
+                 <li><a href="./sub2.html">Goods</a></li>
+                 <li><a href="./index.html"><img src="./img/logo.png" alt="연 로고" class="gnb-logo"></a></li>
+                 <li><a href="./sub3.html">Next Exhibition</a></li>
+                 <li><a href="./sub4.html">Visit</a></li>
+            </ul>
+         </nav>
+    </div>
+ </section>
+
+ <!-- ★ 추가 1: 모바일용 햄버거 버튼 (png 없이 CSS로 그립니다) -->
+    <div class="m-menu-btn" id="mMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- ★ 추가 2: 슬라이드 메뉴 전체 구조 -->
+    <div class="side-menu-wrap" id="sideMenuWrap">
+        <!-- 닫기 버튼 (X 모양) -->
+        <div class="close-btn" id="closeBtn">
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- 슬라이드 메뉴 리스트 -->
+        <ul class="side-menu-list">
+            <li><a href="./sub1.html">Story</a></li>
+            <li><a href="./sub2.html">Goods</a></li>
+            <li><a href="./index.html">Main</a></li>
+            <li><a href="./sub3.html">Next Exhibition</a></li>
+            <li><a href="./sub4.html">Visit</a></li>
+        </ul>
+    </div>
+
+
+ <div id="stroy">
+    <div><img src="./img/서브1-로고.png" alt=""></div>
+    <p>시간을 잇는 이름</p>
+    </div>
+   <section id="story-section">
+    <div class="inner">
+        <div class="story-row row-left">
+            <div class="img-box"><img src="./img/서브1- 이미지1.jpg" alt=""></div>
+            <div class="text-box">
+            </div>
+        </div>
+
+        <div class="story-row row-right">
+            <div class="img-box"><img src="./img/서브1- 이미지2.jpg" alt=""></div>
+            <div class="text-box">
+                <h3>연은</h3>
+                <p>인연의 '연'이자 이어짐의 의미를 담고 있습니다.
+                    <br>
+                    <br>전통의 결에서 시작된 이 이야기는 현대의 감각과 만나
+                    <br>
+                    <br>새로운 흐름을 만들어 갑니다.
+                </p>
+            </div>
+        </div>
+         <div class="inner">
+        <div class="story-row row-left">
+            <div class="img-box"><img src="./img/서브1- 이미지3.jpg" alt=""></div>
+            <div class="text-box">
+                <p>이 공간은 단순한 전시가 아닌
+                    <br>머무르고, 느끼고, 이어지는 경험입니다.
+                    <br>
+                    <br>흐르는 시간 속에서 각자의 순간이 겹쳐지고
+                    <br>그 안에서 새로운 감정이 조용히 피어납니다.
+                    <br>
+                    <br>연은 시간과 사람, 그리고 감정을 잇습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="screen-section">
+    <div class="screen-container">
+        <img src="./img/서브1- 이미지7.jpg" alt="산수화 병풍" class="screen-img">
+        
+        <h1 class="animate-text">흐르는 시간 위에 고요한 미를 잇다</h1>
+    </div>
+</section>
+<div class="gallery-container">
+  <div class="top-row">
+    <div class="img-box"><img src="./img/서브1- 이미지4.jpg" alt="Water Garden"></div>
+    <div class="img-box"><img src="./img/서브1- 이미지5.jpg" alt="Art Installation"></div>
+  </div>
+  <div class="bottom-row">
+    <div class="img-box"><img src="./img/서브1- 이미지6.jpg" alt="Traditional Room"></div>
+  </div>
+ </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="./img/logo.png" alt="연 로고">
+        </div>
+
+        <div class="footer-info">
+            <p>대표: 강수민</p>
+            <p>사업자등록번호: 123-45-78910</p>
+            <p>고객센터: 051-000-0000</p>
+            <p>주소: 부산광역시 00구 97번길</p>
+        </div>
+
+        <div class="footer-right">
+            <div class="slogan">
+                <span class="brand-name">Yeon</span>
+                <p>A museum blending tradition and modernity</p>
+            </div>
+            <div class="sns-icon">
+                <a href="#"><img src="./img/메인- 인스타 아이콘.png" alt="인스타그램"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 1. 감시할 대상 설정 (문장들)
+    const observerOptions = {
+        root: null, // 브라우저 창 기준
+        threshold: 0.5 // 대상이 화면에 50% 이상 보일 때 실행
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // 2. 대상이 화면에 들어왔다면
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active'); // active 클래스 추가
+                // 한번만 나타나게 하고 싶다면 감시 중단 (선택사항)
+                // observer.unobserve(entry.target); 
+            } else {
+                // 다시 올라갔을 때 글자를 숨기고 싶다면 아래 주석 해제
+                // entry.target.classList.remove('active');
+            }
+        });
+    }, observerOptions);
+
+    // 3. 클래스가 .animate-text인 모든 요소를 감시 시작
+    const scrollElements = document.querySelectorAll('.animate-text');
+    scrollElements.forEach((el) => observer.observe(el));
+</script>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="hamburger.js"></script>
+
+<script>
+    // 각 요소 가져오기
+    const mMenuBtn = document.getElementById('mMenuBtn'); // 햄버거 버튼
+    const closeBtn = document.getElementById('closeBtn'); // 닫기 버튼
+    const sideMenuWrap = document.getElementById('sideMenuWrap'); // 메뉴 전체 박스
+
+    // 1. 햄버거 버튼 클릭 시 메뉴 펼치기
+    mMenuBtn.addEventListener('click', () => {
+        sideMenuWrap.classList.add('active'); // active 클래스 추가 -> 메뉴 보임
+    });
+
+    // 2. 닫기 버튼 클릭 시 메뉴 닫기
+    closeBtn.addEventListener('click', () => {
+        sideMenuWrap.classList.remove('active'); // active 클래스 제거 -> 메뉴 숨김
+    });
+</script>
+
+</body>
+</html>

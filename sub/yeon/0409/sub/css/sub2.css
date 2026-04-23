@@ -1,0 +1,659 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+body, html{
+    font-size: 18px;
+    line-height: 24px;
+    overflow-x: hidden; /* 가로 스크롤 강제 방지 */
+    font-family: 'KimJeongcheolMyoungjo';
+    width: 100%;
+   
+}
+@font-face {
+    font-family: 'KimJeongcheolMyoungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulMyungjo-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KimJeongcheolMyoungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulMyungjo-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KimJeongcheolMyoungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulMyungjo-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+/* pc 1920 가운데1000  */
+/* tablet 1100 너비100% */
+/* @media(max-width:1100px){} */
+/* mobile 770 너비100% */
+/* @media(max-width:770px){} */
+
+/* 헤더 설정 */
+
+#section2 {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background-color: #f5f1e8;
+    color: #2b2c2c;
+    height: 80px;
+    font-family: 'KimJeongcheolMyoungjo';
+
+}
+
+
+/* 1번째 메뉴: Story */
+.section2-gnb ul li:nth-child(1) a:hover {
+    color: #2b2c2c; /* 원하는 색상 코드로 변경하세요 */
+    font-weight: 700;
+}
+
+/* 2번째 메뉴: Goods */
+.section2-gnb ul li:nth-child(2) a:hover {
+    color: #8D2F30;
+    font-weight: 700;
+}
+
+/* 3번째는 로고이므로 패스하거나 별도 효과 (이미지이므로 filter 사용 가능) */
+/* .section2-gnb ul li:nth-child(3) a:hover { ... } */
+
+/* 4번째 메뉴: Next Exhibition */
+.section2-gnb ul li:nth-child(4) a:hover {
+    color: #2f4b6c;
+    font-weight: 700;
+}
+
+/* 5번째 메뉴: Visit */
+.section2-gnb ul li:nth-child(5) a:hover {
+    color: #c2a24d;
+    font-weight: 700;
+}
+
+
+
+.section2_bg {
+    width: 100%;
+    /* 부모 요소에 overflow: hidden이 있으면 sticky가 작동 안 하니 주의하세요! */
+}
+
+.section2-gnb {
+    position: -webkit-sticky; /* 사파리 지원 */
+    position: fixed;
+    top: 0;           /* ★ 스크롤 시 화면 맨 위(0)에 고정됨 */
+    width: 100%;
+    height: 80px;
+    z-index: 1000;    /* 다른 콘텐츠보다 위에 보이도록 */
+    
+    /* 백세주처럼 배경에 패턴과 투명도를 동시에 주는 법 */
+    background: linear-gradient(rgba(244, 241, 234, 0.9), rgba(244, 241, 234, 0.9)), 
+                url('../img/메인\ 고정\ 헤더\ 배경.png') repeat-x center;
+    background-size: auto, contain;
+    
+    /* 스크롤 시 뒤가 살짝 비치는 고급스러운 효과 */
+    backdrop-filter: blur(5px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1); /* 하단 경계선 */
+}
+
+.section2-gnb ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center; /* ★ 글자와 로고의 세로 중앙 정렬 */
+}
+/* 260409 */
+.section2-gnb ul li{
+    width: 80px;
+}
+
+.mob-logo{
+    display: none;
+}
+
+.section2-gnb a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+}
+/* 로고 이미지 개별 스타일 */
+.gnb-logo {
+    height: 75px; /* 로고 크기는 적절히 조절하세요 */
+    position: relative;
+    top: 5px; /* ★ 로고를 아래로 내려서 메뉴 바에 걸치게 만듦 */
+    transition: transform 0.3s;
+    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.3));
+}
+
+.gnb-logo:hover {
+    transform: scale(1.05); /* 마우스 올렸을 때 살짝 커지는 효과 (선택) */
+}
+/* 기존 코드 아래에 추가하세요 */
+@media screen and (max-width: 770px) {
+    .section2-gnb {
+        /* 높이는 유지하되 배경 이미지 크기를 조금 키워서 조절 */
+        background-size: auto 150%; 
+        background-position: center;
+        height: 80px; /* 모바일에서는 헤더 높이를 살짝 줄이는 게 예뻐요 */
+        border-top: 1px solid #2b2c2c2a;
+        border-bottom: 1px solid #2b2c2c2a;
+    }
+    
+    .gnb-logo {
+        height: 70px; /* 로고 크기도 모바일에 맞게 조정 */
+        text-align: center;
+    }
+}
+
+/* 기본 PC 스타일 (1920px 기준 가로 1000px 중앙 정렬) */
+.banner-container {
+    width: 100%;
+    height: 700px; /* 이미지 비율에 맞춰 조정하세요 */
+    background-image: url('../img/서브2-\ 배너1.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    width: 1000px; /* PC 가이드라인 */
+    padding: 0 20px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+/* Tablet (1100px 이하) */
+@media (max-width: 1100px) {
+    .banner-content {
+        width: 100%; /* 너비 100% */
+        font-size: 2rem;
+        text-align: center; /* 태블릿부터는 가독성을 위해 중앙 정렬 권장 */
+    }
+}
+
+/* Mobile (770px 이하) */
+@media (max-width: 770px) {
+    .banner-container {
+        height: 400px; /* 모바일은 높이를 조금 줄임 */
+        background-position: 70% center; /* 모바일에서 노리개(오른쪽 요소)를 더 보여줌 */
+    }
+    
+    .banner-content {
+        width: 100%;
+        font-size: 1.5rem; /* 글자 크기 축소 */
+        padding: 0 15px;
+    }
+    
+    .banner-content p {
+        margin-bottom: 5px;
+    }
+}
+
+/* 기본 섹션 설정 */
+.goods-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+/* 1. 배경 비디오 레이어 */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 콘텐츠 뒤로 보내기 */
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 영상이 꽉 차게 */
+    filter: brightness(0.8); /* 이미지 가독성을 위해 살짝 어둡게 (선택사항) */
+}
+
+/* 2. PC 중심 정렬 (1920px 기준 가운대 1000px) */
+.goods-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.goods-title {
+    font-size: 24px;
+    margin-bottom: 50px;
+    color: #f5f1e8;
+    font-weight: 400;
+}
+
+.goods-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 배치 */
+    gap: 40px; /* 이미지 사이 간격 */
+}
+
+.goods-grid .item img {
+    width: 100%;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- Tablet (1100px 이하) --- */
+@media (max-width: 1100px) {
+    .goods-container {
+        width: 100%; /* 너비 100% */
+        padding: 0 40px; /* 여백 확보 */
+    }
+    .goods-grid {
+        gap: 20px;
+    }
+}
+/* --- Mobile (770px 이하) --- */
+@media (max-width: 770px) {
+    .goods-section {
+        padding: 50px 0;
+    }
+    .goods-container {
+        padding: 0 20px;
+    }
+    .goods-grid {
+        grid-template-columns: 1fr; /* 1열 배치로 변경 */
+        gap: 30px;
+    }
+    .goods-title {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* 1. 각 아이템 박스 설정 */
+.goods-grid .item {
+    position: relative;
+    overflow: hidden; /* 이미지 밖으로 나가는 레이어 숨김 */
+    display: flex;    /* 이미지 크기에 딱 맞추기 위함 */
+    border-radius: 8px; /* 선택사항: 모서리를 둥글게 할 경우 */
+}
+
+/* 2. 이미지 설정 */
+.goods-grid .item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* 3. 호버 레이어 (이미지 사이즈와 동일하게) */
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    /* 시작 위치: 아래에 완전히 숨김 */
+    transform: translateY(100%); 
+    transition: transform 0.4s ease-out;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* 4. 호버 시 동작 */
+.goods-grid .item:hover .hover-content {
+    /* 아래에서 위로 '스르륵' 올라옴 */
+    transform: translateY(0);
+}
+
+/* 텍스트 스타일 */
+.hover-text {
+    color: #f5f1e8;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    /* 텍스트도 살짝 늦게 나타나는 효과 (선택사항) */
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+}
+.content{
+    color: #f5f1e8;
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: 100;
+}
+.goods-grid .item:hover .hover-text {
+    opacity: 1;
+}
+
+
+/* 띠 배너 설정 */
+.ticket-banner {
+    position: relative; /* absolute 대신 relative나 flex 아이템으로 사용 */
+    z-index: 2;
+    width: 100%;
+    
+  background: url(../img/서브2-\ 예매하기.jpg);
+    padding: 50px 0; /* 띠 자체의 두께(높이) 조절 */
+    
+    /* 위아래 여백: 이 설정 덕분에 영상이 위아래로 보입니다 */
+    margin: 100px 0 0 0;
+}
+
+/* PC 1920 기준 가운데 1000px */
+.banner-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.banner-text {
+    color: #f5f1e8;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.btn-ticket {
+    display: inline-block;
+    background: #f5f1e8; /* 이미지 속 베이지색 버튼 */
+    color: #500a0a;
+    padding: 12px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #8d2f30;
+    transition: 0.3s;
+}
+
+.btn-ticket:hover {
+    background: #8d2f30;
+    color: #f5f1e8;
+    transform: scale(1.05);
+}
+
+/* --- Tablet (1100px 이하) --- */
+@media (max-width: 1100px) {
+    .banner-inner {
+        width: 100%;
+        padding: 0 40px;
+        gap: 30px;
+    }
+    .banner-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Mobile (770px 이하) --- */
+@media (max-width: 770px) {
+    .ticket-banner {
+        padding: 20px 0;
+    }
+    .banner-inner {
+        flex-direction: column; /* 세로 배치로 변경 */
+        text-align: center;
+        gap: 15px;
+    }
+    .banner-text {
+        text-align: center;
+        font-size: 0.95rem;
+        word-break: keep-all; /* 문단 예쁘게 끊기기 */
+    }
+    .btn-ticket {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+.footer {
+    width: 100%;
+    padding: 40px 0;
+    border-top: 1px solid #ddd;
+    /* 1. 바탕색만 남기고 배경 이미지 코드는 삭제합니다 */
+    background-color: #f5f1e8; 
+    /* 2. 가상 요소의 기준점이 되도록 설정 */
+    position: relative;
+    /* 3. 배경이 푸터 영역 밖으로 나가지 않게 설정 */
+    overflow: hidden;
+}
+
+/* 4. 배경 문양 전용 레이어 추가 */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 기존에 쓰시던 배경 이미지 경로 */
+    background: url('../img/푸터1.png') repeat;
+    /* 🔴 문양의 투명도 조절 (0.1 ~ 0.2 추천) */
+    opacity: 0.15; 
+    z-index: 1;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 0 20px;
+    /* 5. 글자들이 배경 문양보다 위로 올라오도록 설정 */
+    position: relative;
+    z-index: 2;
+}
+
+/* --- 이 아래 로고, 텍스트 스타일은 기존과 동일합니다 --- */
+.footer-logo img {
+    height: 100px;
+}
+
+.footer-info p {
+    font-size: 14px;
+    color: #2b2c2c;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.footer-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: right;
+}
+
+.brand-name {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.slogan p {
+    font-size: 13px;
+    color: #2b2c2c;
+    font-weight: 400;
+}
+
+.sns-icon img {
+    width: 35px;
+    filter: grayscale(1);
+}
+/* mobile 770 너비100% */
+@media (max-width: 770px){
+    .footer-container {
+        flex-direction: column; /* 가로 배열을 세로로 변경 */
+        text-align: center;     /* 모든 텍스트 가운데 정렬 */
+        gap: 30px;              /* 세로 요소 사이 간격 조절 */
+        padding: 40px 20px;
+    }
+
+    .footer-right {
+        margin-left: 0;         /* PC에서 오른쪽으로 밀었던 여백 제거 */
+        flex-direction: column; /* 슬로건과 SNS 아이콘도 세로로 */
+        align-items: center;    /* 아이콘 가운데 정렬 */
+        text-align: center;
+    }
+
+    .footer-info p {
+        font-size: 13px;        /* 모바일에서 글자 크기 살짝 줄이기 */
+    }
+
+    .footer-logo img {
+        height: 80px;           /* 로고 크기 살짝 줄이기 */
+    }
+}
+
+
+/* [기본 설정] PC에서는 모바일용 요소들을 아예 보이지 않게 숨깁니다 */
+.m-menu-btn, .side-menu-wrap {
+    display: none;
+}
+
+/* --- 모바일 미디어 쿼리 (770px 이하에서만 작동) --- */
+@media screen and (max-width: 770px) {
+    
+    /* 1. PC용 메뉴 숨기기 */
+    .section2-gnb ul {
+        display: none !important; /* 혹시 모를 충돌 방지를 위해 !important 추가 */
+    }
+    /* 2. 하지만 로고를 감싸고 있는 <a> 태그(혹은 img)는 강제로 보이게 합니다. */
+    /* 로고 이미지의 클래스명이 .gnb-logo 였죠? */
+    .gnb-logo {
+        display: block !important; /* 숨겨진 부모를 무시하고 강제로 보이게 함 */
+        position: absolute; /* 위치를 자유롭게 잡기 위해 */
+        left: 50%; /* 화면 중앙 정렬 */
+        transform: translateX(-50%); /* 정확한 중앙 보정 */
+        top: 5px; /* 헤더 안에서의 세로 위치 조정 */
+    }
+    /* 2. 햄버거 버튼 활성화 및 디자인 */
+    .m-menu-btn {
+        display: flex; /* 드디어 나타남 */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        /* ★ absolute를 fixed로 변경하세요 ★ */
+        position: fixed; 
+    
+       right: 20px;
+    
+     /* %보다는 px로 고정된 수치를 주는 것이 위치 잡기 더 정확합니다 */
+      top: 30px; 
+    
+    /* position: fixed로 바꾸면 translateY 보정은 지우는 것이 깔끔합니다 */
+    /* transform: translateY(-50%); */ 
+    
+    z-index: 1001; /* 로고나 다른 콘텐츠보다 항상 위에 보이도록 */
+    }
+    .mob-logo{
+    display: block;
+    height: 80px;
+    text-align: center;
+    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.3));
+    } 
+
+    .m-menu-btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #8d2f30;
+        border-radius: 2px;
+    }
+
+    /* 3. 슬라이드 메뉴 스타일 */
+    .side-menu-wrap {
+        display: block; /* 숨김 해제 */
+        position: fixed;
+        top: 0;
+        right: -100%; /* 처음엔 오른쪽 밖에 숨어있음 */
+        width: 100%;
+        height: 100vh;
+        background-color: #8d2f30;
+        z-index: 2000;
+        transition: right 0.3s ease;
+    }
+
+    /* 자바스크립트로 .active 클래스가 붙으면 화면 안으로 들어옴 */
+    .side-menu-wrap.active {
+        right: 0;
+    }
+
+    /* 4. 닫기 버튼 (X 모양) */
+    .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .close-btn span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #f5f1e8;
+        top: 50%;
+    }
+
+    .close-btn span:nth-child(1) { transform: rotate(45deg); }
+    .close-btn span:nth-child(2) { transform: rotate(-45deg); }
+
+    /* 5. 메뉴 리스트 내부 스타일 */
+    .side-menu-list {
+        display: flex;
+        flex-direction: column;
+        padding: 100px 30px 0; /* 위쪽 여백 넉넉히 */
+        list-style: none;
+    }
+
+    .side-menu-list li {
+        padding: 20px 0;
+        border-bottom: 1px solid #f5f1e8;
+    }
+
+    .side-menu-list li a {
+        text-decoration: none;
+        color: #f5f1e8;
+        font-size: 20px;
+        font-weight: 500;
+        display: block;
+    }
+}
