@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/card1.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./cardnews1/newspaper_1969193.png">
+    <title>Card News 1</title>
+</head>
+<body>
+    <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="swiper-zoom-container">
+        <img src="./cardnews1/Artboard 1.png" />
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-zoom-container">
+        <img src="./cardnews1/Artboard 1 copy.png" />
+      </div>
+    </div>
+    <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./cardnews1/Artboard 1 copy 2.png" /></div></div>
+    <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./cardnews1/Artboard 1 copy 3.png" /></div></div>
+    <div class="swiper-slide"><div class="swiper-zoom-container"><img src="./cardnews1/Artboard 1 copy 4.png" /></div></div>
+  </div>
+  
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>var swiper = new Swiper(".mySwiper", {
+  // 줌 기능 활성화
+  zoom: true,
+  
+  // 무한 루프 (선택사항)
+  loop: false, 
+  
+  // 페이지네이션 (점)
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  
+  // 좌우 화살표
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  
+  // 키보드로 조작 가능하게
+  keyboard: {
+    enabled: true,
+  },
+});</script>
+    
+</body>
+</html>

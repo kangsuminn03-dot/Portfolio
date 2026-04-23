@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* 배경이 화면 밖으로 나가는 것 방지 */
+}
+
+/* ✨ 배경 이미지만 담당하는 가상 레이어 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../cardnews2/bg.jpg) no-repeat center;
+    background-size: cover;
+    
+    /* 🎨 여기서 투명도를 조절하세요 (0.1 ~ 1.0) */
+    opacity: 0.8; 
+    
+    z-index: -1; /* 카드뉴스보다 뒤로 보내기 */
+}
+
+.swiper {
+  width: 90%;          /* 화면 너비의 90%까지 사용 */
+  max-width: 800px;    /* 기존 600px에서 800px로 확대 */
+  height: 800px;       /* 가로세로 비율을 맞춰서 키워주세요 (예: 800x800) */
+  
+  /* 화면 정중앙 배치 꿀팁 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background: #000;
+  border-radius: 20px; /* 선택사항: 모서리를 살짝 둥글게 하면 더 예뻐요! */
+
+  /* ✨ 그림자 효과 추가: 가로위치 세로위치 번짐정도 색상 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
+
+/* 줌 컨테이너 설정 */
+.swiper-zoom-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 이미지가 잘리지 않게 설정 */
+}
+
+/* 네비게이션 버튼 색상 변경 (포트폴리오 톤에 맞게) */
+.swiper-button-next, .swiper-button-prev {
+  color: #000000;
+}
+.swiper-pagination-bullet-active {
+  background: #000000;
+}
