@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+
+
+.main-visual {
+    /* height: 90vh; 대신 아래 코드를 쓰세요 */
+    min-height: 90vh;
+    
+    /* 배경색 설정 (수민님이 정하신 색상으로 변경하세요) */
+    background-color: #c8addd; 
+    
+    /* 정중앙 정렬 마법의 3줄 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 */
+    align-items: center;     /* 세로 중앙 */
+    padding: 50px 0; /* 위아래 여백을 주면 이미지가 더 안정적으로 보여요 */
+    text-align: center;
+}
+
+.main-visual h1 {
+    font-size: 3rem;
+    /* margin-bottom: 10px; */
+}
+
+.main-visual p {
+    font-size: 1.2rem;
+    color: #666;
+    /* margin-bottom: 30px; */
+}
+
+.main-image img {
+    /* 이미지 크기는 적절히 조절하세요 */
+    margin: -10px auto;
+    max-width: 60%;
+    height: auto;
+    /* 만약 이미지에 그림자를 넣고 싶다면 아래 추가 */
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+
+.fixed-buttons {
+    position: fixed;
+    right: 30px;  /* 오른쪽에서 30px 띄움 */
+    bottom: 30px; /* 아래에서 30px 띄움 */
+    display: flex;
+    flex-direction: column; /* 버튼을 세로로 나열 */
+    gap: 10px;    /* 버튼 사이 간격 */
+    z-index: 999; /* 다른 요소보다 위에 보이게 설정 */
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* 동그란 모양 */
+    border: none;
+    background-color: #333; /* 기본 배경색 */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* 마우스를 올렸을 때 효과 */
+.btn:hover {
+    background-color: #7db971; /* 수민님의 포인트 컬러(레드)로 변경해보세요! */
+    transform: translateY(-5px); /* 살짝 위로 올라가는 효과 */
+}
